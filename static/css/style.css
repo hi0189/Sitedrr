@@ -1,0 +1,624 @@
+/* Variáveis de cores */
+:root {
+    --primary-color: black;
+    /*--secondary-color: #c9a961;*/
+    --secondary-color: #d57932;
+    --text-color: #333;
+    --light-color: #f8f9fa;
+    --dark-color: black;
+    --accent-color: #3498db;
+}
+
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff;
+}
+
+/* Estilos do cabeçalho e navegação */
+header {
+    background-color: var(--primary-color);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Logo do header - responsiva */
+.logo img {
+    max-width: 220px;
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2.5rem;
+}
+
+.nav-links a {
+    color: var(--light-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+.mobile-menu-btn {
+    display: none;
+    color: var(--light-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Seção Hero */
+.hero {
+    background: linear-gradient(black),
+                url('../img/hero-bg.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 1rem;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+/* Logo da hero - responsiva */
+.hero-logo {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    max-height: 400px;
+    max-width: 650px;
+    margin-bottom: 2rem;
+    object-fit: contain;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero .subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.hero .description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+/* Botões CTA */
+.cta-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    margin: 0.5rem;
+}
+
+.cta-button:hover {
+    background-color: #b89648;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
+}
+
+.cta-button i {
+    margin-right: 0.5rem;
+}
+
+.whatsapp-btn {
+    background-color: #25d366;
+}
+
+.whatsapp-btn:hover {
+    background-color: #20b358;
+}
+
+.email-btn {
+    background-color: #0084ff;
+}
+
+.email-btn:hover {
+    background-color: #0066cc;
+}
+
+/* Botão WhatsApp Flutuante */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    background-color: #20b358;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float i {
+    color: white;
+    font-size: 1.8rem;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.8);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    }
+}
+
+/* Seções gerais */
+section {
+    padding: 6rem 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: black;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+/* Seção Sobre */
+.about {
+    background-color: #f9f9f9;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    flex: 1.5;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Seção Serviços */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+.service-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Seção Contato */
+.contact {
+    background-color: #f9f9f9;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contact-info, .contact-map {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 3rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h3, .contact-map h3 {
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.contact-item {
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+    color: var(--secondary-color);
+    min-width: 25px;
+    flex-shrink: 0;
+}
+
+.contact-item div {
+    flex: 1;
+}
+
+.contact-item strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: black;
+}
+
+.contact-item a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: var(--secondary-color);
+}
+
+.contact-actions {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.contact-actions .cta-button {
+    margin: 0.5rem;
+    padding: 1rem 1.5rem;
+}
+
+/* Mapa */
+.map-container {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-links {
+    margin-bottom: 1.5rem;
+}
+
+.social-links a {
+    display: inline-block;
+    color: var(--light-color);
+    font-size: 1.5rem;
+    margin: 0 0.8rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* Animações */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsividade */
+@media screen and (max-width: 1024px) {
+    .about-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .about-image {
+        text-align: center;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* Logo da hero em tablets */
+    .hero-logo {
+        max-width: 90%;
+        max-height: 350px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 1rem 5%;
+    }
+
+    /* Logo do header menor em mobile */
+    .logo img {
+        max-width: 180px;
+        height: 80px;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: black;
+        padding: 1rem 0;
+        text-align: center;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease-in;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    /* Ajustar hero para mobile */
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 120px;
+        padding-bottom: 2rem;
+    }
+
+    /* Logo da hero ajustada para mobile */
+    .hero-logo {
+        max-width: 90%;
+        max-height: 250px;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1.5rem;
+    }
+
+    .hero .description {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* Melhorar responsividade da seção contato */
+    .contact-info, .contact-map {
+        padding: 2rem;
+    }
+
+    .contact-item {
+        margin-bottom: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .contact-item i {
+        margin-right: 1rem;
+        margin-top: 0.2rem;
+    }
+
+    .contact-actions .cta-button {
+        display: block;
+        margin: 0.5rem 0;
+        width: 100%;
+    }
+
+    /* Ajustar botão WhatsApp flutuante para mobile */
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .whatsapp-float i {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    /* Logo do header ainda menor */
+    .logo img {
+        max-width: 160px;
+        height: 70px;
+    }
+
+    /* Logo da hero ainda menor */
+    .hero-logo {
+        max-width: 85%;
+        max-height: 200px;
+        margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .contact-info, .contact-map {
+        padding: 1.5rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Melhorar ainda mais a responsividade dos itens de contato */
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 2rem;
+        align-items: center;
+    }
+
+    .contact-item i {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+        margin-top: 0;
+    }
+
+    .contact-item div {
+        text-align: center;
+    }
+
+    /* Botão WhatsApp ainda menor em telas muito pequenas */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .whatsapp-float i {
+        font-size: 1.4rem;
+    }
+}
